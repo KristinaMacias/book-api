@@ -36,7 +36,7 @@
   
   .book-list {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
   }
   
@@ -46,7 +46,15 @@
     border-radius: 4px;
   }
   
-  .book h3, .book h4 {
+  .book h3,
+  .book h4 {
     margin: 0;
+  }
+  
+  /* Media query for mobile devices */
+  @media (max-width: 600px) {
+    .book-list {
+      grid-template-columns: 1fr;
+    }
   }
   
