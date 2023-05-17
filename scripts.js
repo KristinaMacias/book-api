@@ -6,7 +6,7 @@ const bookNameInput = document.getElementById("bookName-input");
 const bookAuthorInput = document.getElementById("bookAuthor-input");
 const bookReadInput = document.getElementById("status");
 const addBookButton = document.getElementById("submit");
-
+// display variables for dom
 const wantDisplay = document.getElementById("want-display");
 const currentDisplay = document.getElementById("current-display");
 const readDisplay = document.getElementById("read-display");
@@ -41,7 +41,7 @@ function displayBooks() {
   let books = bookList.map((book) => {
     return `
       <div class="book">
-          <h3>Title: ${book.bookName}</h3>
+          <h3 id="book-title">Title: ${book.bookName}</h3>
           <h4>Author: ${book.bookAuthor}</h4>
           <h4>Read Status: ${book.readStatus}</h4>
       </div>
