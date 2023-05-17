@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Add a Book</h1>
+        <div class="form-group">
+            <label for="bookName-input">Book Name</label>
+            <input type="text" placeholder="Enter book name..." id="bookName-input" />
+        </div>
+        <div class="form-group">
+            <label for="bookAuthor-input">Book Author</label>
+            <input type="text" placeholder="Enter book author..." id="bookAuthor-input" />
+        </div>
+        <div class="form-group">
+            <label for="status">Shelf</label>
+            <select id="status" name="read-status">
+                <option value="read">Read</option>
+                <option value="currently-reading">Currently Reading</option>
+                <option value="want-to-read">Want to Read</option>
+            </select>
+        </div>
+        <button id="submit">Submit</button>
+    </div>
+
+    <div class="container">
+        <h1>Want to Read:</h1>
+        <div id="want-display" class="book-list"></div>
+    </div>
+
+    <div class="container">
+        <h1>Currently Reading:</h1>
+        <div id="current-display" class="book-list"></div>
+    </div>
+
+    <div class="container">
+        <h1>Read:</h1>
+        <div id="read-display" class="book-list"></div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+
+</html>
