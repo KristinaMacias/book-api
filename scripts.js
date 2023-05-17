@@ -48,22 +48,30 @@ function displayBooks() {
     `;
   });
 
-  wantDisplay.innerHTML = "";
-  currentDisplay.innerHTML = "";
-  readDisplay.innerHTML = "";
+  wantDisplay.innerHTML = ""; // Clear the innerHTML of the div b/c we are going to add new content
+  currentDisplay.innerHTML = ""; // Clear the innerHTML of the div b/c we are going to add new content
+  readDisplay.innerHTML = ""; // Clear the innerHTML of the div b/c we are going to add new content
 
+  //iterate through the books array and display the books in the DOM based on their read status
   for (let book of books) {
     if (book.includes("want-to-read")) {
-      wantDisplay.innerHTML += book;
+      wantDisplay.innerHTML += book; // Add the book to the DOM
     } else if (book.includes("currently-reading")) {
-      currentDisplay.innerHTML += book;
+      currentDisplay.innerHTML += book; // Add the book to the DOM
     } else if (book.includes("read")) {
-      readDisplay.innerHTML += book;
+      readDisplay.innerHTML += book; // Add the book to the DOM
     } else {
       console.log("Uncategorized", book);
     }
   }
 }
+
+// Function to clear the form inputs
+function clearFormInputs() {
+    bookNameInput.value = "";
+    bookAuthorInput.value = "";
+    bookReadInput.value = "read"; // Set the default value for the select input
+  }
 
 // Function to post books to the API
 async function postBook() {
@@ -83,6 +91,7 @@ async function postBook() {
     console.log(response);
 
     getBooks();
+    clearFormInputs();
   } catch (error) {
     console.log(error);
   }
